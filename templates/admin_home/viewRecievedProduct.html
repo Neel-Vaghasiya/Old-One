@@ -1,0 +1,58 @@
+{% load static%}
+
+<html>
+<head>  
+<style>
+    .table-users {
+        border: 1px solid #398B93;
+        border-radius: 10px;
+        box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        max-width: calc(100% - 2em);
+        margin: 1em auto;
+        overflow: hidden;
+        width: 1200px;
+    }
+    .header {
+        background :#398B93;
+        color: white;
+        font-size: 1.5em;
+        padding: 1rem;
+        text-align: center;
+        text-transform: uppercase;}
+    tr:hover{
+        background-color:#DDD;
+    }
+</style>
+</head>
+<body>
+<div class="table-users">
+   <div class="header">Received Products</div>
+   
+   <table cellspacing="0" border="1" >
+      <tr>
+         <th width="150">Picture</th>
+         <th width="120">Name</th>
+         <th width="400">Description</th>
+         <th width="100">Price</th>
+         <th width="250">Seller Name</th>
+         <th width="350">Seller Email</th>
+         <th colspan="2">Operation </th>
+      </tr>
+        {% for p in products %}
+        <tr>
+            <th><img src="{{p.images.url}}" height=150 width=150></th>
+            <th width=120>{{p.product_name}}</th>
+            <th>{{p.description}}</th>
+            <th width=100>{{p.price}}</th>
+            <th width=250>{{p.seller_name}}</th>
+            <th width=350>{{p.seller_email}}</th>
+            <th><input type=button onClick="location.href='/Accept/{{p.id}}'" value='Accept'/></th>
+            <th><input type=button onClick="location.href='/Reject/{{p.id}}'" value='Reject'/></th>
+        </tr>
+    {% endfor %}
+    
+</table>
+<p align="center"><font size=4><a href="/ad/admin_indexPage">Home</a></p>
+</div>
+</body>
+</html>

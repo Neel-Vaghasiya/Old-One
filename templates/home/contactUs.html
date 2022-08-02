@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+
+   <!-- FAVICON -->
+  <link href="{% static 'index/img/favicon.png' %}" rel="shortcut icon">
+  <link rel="stylesheet" href="{% static 'index/plugins/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'index/plugins/bootstrap/css/bootstrap-slider.css' %}">
+  <!-- Font Awesome -->
+  <link href="{% static 'index/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- Owl Carousel -->
+  <link href="{% static 'index/plugins/slick-carousel/slick/slick.css' %}" rel="stylesheet">
+  <link href="{% static 'index/plugins/slick-carousel/slick/slick-theme.css' %}" rel="stylesheet">
+  <!-- Fancy Box -->
+  <link href="{% static 'index/plugins/fancybox/jquery.fancybox.pack.css' %}" rel="stylesheet">
+  <link href="{% static 'indexplugins/jquery-nice-select/css/nice-select.css' %}" rel="stylesheet">
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'index/css/style.css' %}" rel="stylesheet">
+  <style>
+	  body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+	  input[type=text], select, textarea {
+        width: 100%;
+  		padding: 12px;
+  		border: 1px solid #ccc;
+  		border-radius: 4px;
+  		box-sizing: border-box;
+  		margin-top: 6px;
+  		margin-bottom: 16px;
+  		resize: vertical;
+}
+.contact{
+	border: 2px solid;
+	border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 500px;
+  margin-left: 750px;
+  margin-top: 25px;
+}
+  </style>
+</head>
+
+<body class="body-wrapper">
+
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg navbar-light navigation">
+					<a class="navbar-brand" href="index.html">
+						
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto main-nav ">
+							<li class="nav-item active">
+								<a class="nav-link" href="/">Home</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--================================
+=            Page Title            =
+=================================-->
+<section class="page-title">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<!-- Title text -->
+				<h3>Contact Us</h3>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<form class='contact' action="/contact" method="POST">
+	{% csrf_token %}
+			<label for="fname"><strong>Name</strong></label></br>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+	        </br>
+            <label for="email"><strong>Email</strong></label></br>
+            <input type="text" id="email" name="email" placeholder="Enter your email..">
+		</br>
+            <label for="comment"><strong>comment</strong></label></br>
+            <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
+		</br>
+           <input type="submit" value="Submit" style='margin-left: 200px'>
+	</form>
+</body>
+</html>
+
+
+
+
+
+<!-- JAVASCRIPTS -->
+<script src="{% static 'index/plugins/jQuery/jquery.min.js' %}"></script>
+<script src="{% static 'index/plugins/bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static 'index/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'index/plugins/bootstrap/js/bootstrap-slider.js' %}"></script>
+  <!-- tether js -->
+<script src="{% static 'index/plugins/tether/js/tether.min.js' %}"></script>
+<script src="{% static 'index/plugins/raty/jquery.raty-fa.js' %}"></script>
+<script src="{% static 'index/plugins/slick-carousel/slick/slick.min.js' %}"></script>
+<script src="{% static 'index/plugins/jquery-nice-select/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'index/plugins/fancybox/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'index/plugins/smoothscroll/SmoothScroll.min.js' %}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="{% static 'index/plugins/google-map/gmap.js' %}"></script>
+<script src="{% static 'index/js/script.js' %}"></script>
+</body>
+
+</html>

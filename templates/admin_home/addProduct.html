@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% comment %} <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet"> {% endcomment %}
+
+    <link rel="stylesheet" href="{% static '/home/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static '/home/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/home/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static '/home/css/style.css' %}">
+
+    <title>Add Product page</title>
+  </head>
+  <body>
+  
+
+  <div class="d-md-flex half">
+    <div class="bg" style="background-image: url('/static/admin/img/product_bg.jpg')"></div>
+    <div class="contents">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12">
+            <div class="form-block mx-auto">
+              <div class="text-center mb-5">
+                <h3 class="text-uppercase">Add New Product details</h3>
+              </div>
+              <form action="/addProduct" method="post" enctype="multipart/form-data">
+			  {% csrf_token %}
+               <div class="form-group first">
+                  <label for="Product Name">Product Name</label>
+                  <input type="text" class="form-control" placeholder="Enter Product Name" name="product_name" required>
+                </div>
+                <div class="form-group first">
+                  <label for="Product Price">Product Price</label>
+                  <input type="text" class="form-control" placeholder="Enter Product Price" name="product_price" required>
+                </div>
+                <div class="form-group first">
+                  <label for="Product Category">Product Category</label>
+                  <input type="text" class="form-control" placeholder="Enter Product Category" name="product_category" >
+                </div>
+                <div class="form-group first">
+                  <label for="Product Description">Product Description</label>
+                  <textarea class="form-control" placeholder="Enter Product Description" name="product_description" ></textarea>
+                </div>
+                <div class="form-group last mb-3">
+                  <label for="images">Provide Images</label>
+                  <input type="file" class="form-control" placeholder="Provide images" name="image" id="image" required>
+                </div>
+    <input type="submit" value="Add Product" class="btn btn-block py-2 btn-primary"/>
+    <font size=6><a href="/ad/admin_indexPage">Cancel</a>
+</form>
+<script src="{% static '/home/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/home/js/popper.min.js' %}"></script>
+    <script src="{% static '/home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/home/js/main.js' %}"></script>
+  </body>
+</html>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% load static%}
+    
+<!-- <link rel="stylesheet" href="{% static '/admin/style.css' %}"> -->
+
+
+<html>
+    <head>
+        <style>
+            .table-users {
+    border: 1px solid #398B93;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100% - 2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 900px;
+ }
+ .header {
+    background :#398B93;
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+ }
+ .header1{
+    background :#398B93;
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+ }
+            tr:hover{
+                background-color: #ddd;
+            }
+            table{
+                text-align: center;
+            }
+            .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 370px;
+  margin-top: 25px;
+  background-color: #e7e7e7;
+  color: black;
+  width: 100px;
+}
+        </style>
+    </head>
+<body>
+<div class="table-users">
+   <!-- <div class="header">Order Details</div> -->
+   <div class="header">{{user.name}}'s Order On Old-One</div>
+   <div class="header1">
+       <br><br>Shipping Address: {{user.address}}
+   </div>
+   <table cellspacing="0" border="1" >
+      <tr>
+         <th width="500">Product Name</th>
+         <th width="500">Amount</th>
+      </tr>
+        {% for key, value in order.items %}
+        <tr>
+            <td width=120>{{value.product_name}}</td>
+            <td width=100>{{value.price}}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
+<font size=4><a href="/customer_home_index" class="button">Home</a>
+</div>
+</body>
+</html>

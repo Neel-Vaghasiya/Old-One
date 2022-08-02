@@ -1,0 +1,69 @@
+
+{% load static%}
+<html>
+<head>
+<style>
+.table-users {
+    border: 1px solid #398B93;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100% - 2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 1200px;
+ }
+ .header {
+    background :#398B93;
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+ }
+ 
+
+</style>
+</head>
+<body>
+<div class="table-users">
+   <div class="header">Products</div>
+   
+   <table cellspacing="0" border="1" >
+      <tr>
+         <th>Picture</th>
+         <th width="100">Name</th>
+         <th width="700">Description</th>
+         <th width="150">Category</th>
+         <th width="150">Price</th>
+         <th width="200">Upload Date</th>
+         <th width="100">In Stock?</th>
+         <th>Update</th>
+         <th>Delete</th>
+      </tr>
+        {% for p in product%}
+        <tr>
+            <th><img src="{{p.image.url}}" height=100 width=100></th>
+            <th>{{p.product_name}}</th>
+            <th>{{p.description}}</th>
+            <th>{{p.category}}</th>
+            <th>{{p.price}}</th>
+            <th >{{p.product_date}}</th>
+            <th>{%if p.available%}
+                    Yes
+                {%else %}
+                    No
+                {% endif%} </th>
+            {% if p.available%}
+            <th><input type=button onClick="location.href='/UpdateProduct/{{p.product_id}}'" value='Update'/></th>
+            <th><input type=button onClick="location.href='/DeleteProduct/{{p.product_id}}'" value='Delete'/></th>
+            {% else %}
+            <th colspan="2"><input type=button onClick="location.href='/DeleteProduct/{{p.product_id}}'" value='Delete'/></th>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    
+</table>
+<p align="center"><font size=4><a href="/ad/admin_indexPage">Home</a></p>
+</div>
+</body>
+</html>

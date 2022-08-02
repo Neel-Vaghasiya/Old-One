@@ -1,0 +1,82 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% comment %} <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet"> {% endcomment %}
+
+    <link rel="stylesheet" href="{% static '/home/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static '/home/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/home/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static '/home/css/style.css' %}">
+
+    <title>Login page</title>
+  </head>
+  <body>
+  
+
+  <div class="d-md-flex half">
+    <div class="bg" style="background-image: url('static/home/images/bg_1.jpg')"></div>
+    <div class="contents">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12">
+            <div class="form-block mx-auto">
+              <div class="text-center mb-5">
+                <h3 class="text-uppercase">Login to <strong>Online shopping hub</strong></h3>
+              </div>
+               {% if message %}
+                  <div class="alert alert-{{class}}">
+                      <script>alert("{{message}}")</script>
+                  </div>
+              {% endif%}
+              <form action="auth" method="post">
+             
+			  {% csrf_token %}
+                <div class="form-group first">
+                  <label for="username">Email-id</label>
+                  <input type="text" class="form-control" placeholder="Enter your Email id" name="email_id" id="email_id">
+                </div>
+                <div class="form-group last mb-3">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" placeholder="Your Password" name="password" id="password">
+                </div>
+                 <input type="submit" value="Log In" class="btn btn-block py-2 btn-primary">
+				<br>
+				Don't have Account?<a href="register">sign up</a></br></br>
+        Didn't Verify Account?<a href="verify">Verify</a><br><br>
+        <a href="forgot">Forgot Password?</a>
+				</div>
+               
+
+                
+                
+                
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    
+    
+
+    <script src="{% static '/home/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/home/js/popper.min.js' %}"></script>
+    <script src="{% static '/home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/home/js/main.js' %}"></script>
+  </body>
+</html>

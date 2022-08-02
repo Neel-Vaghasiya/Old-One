@@ -1,0 +1,36 @@
+{% load static%}
+    
+<link rel="stylesheet" href="{% static '/admin/style.css' %}">
+
+
+<html>
+<body>
+<div class="table-users">
+   <div class="header">Your Cart</div>
+   
+   <table cellspacing="0" border="1">
+      <tr>
+         <th>Picture</th>
+         <th width="100">Name</th>
+         <th width="390">description</th>
+         <th width="100">Price</th>
+         <th>Remove</th>
+      </tr>
+        {% for key, value in product.items %}
+        <tr>
+            <th><img src="{{value.image.url}}" height=150 width=150></th>
+            <th>{{value.product_name}}</th>
+            <th>{{value.description}}</th>
+            <th>{{value.price}}</th>
+            <th><input type=button onClick="location.href='/remove_from_cart/{{value.product_id}}'" value='Remove'/></th>
+        </tr>
+    {% endfor %}
+    
+</table>
+<p align="center"><font size=4><a href="/customer_home_index">Home</a></p>
+<p align="center"><font size=4><a href="/payment">Place Order</a></p>
+</div>
+</body>
+</html>
+
+</html>
